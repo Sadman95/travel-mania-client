@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "public": "build",
+    "rewrites": [{
+      "source": "/fns/**", "function": "register"
+    }],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
