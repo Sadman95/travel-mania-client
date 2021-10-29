@@ -6,19 +6,19 @@ import { HashLink } from 'react-router-hash-link';
 const NavigationBar = () => {
     return (
         <div>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar className='fixed-top w-100' collapseOnSelect expand="lg" variant="dark">
   <Container>
-  <Navbar.Brand as={NavLink} to="/home">Travel Mania</Navbar.Brand>
+  <Navbar.Brand className='text-dark fw-bold fs-3' as={NavLink} to="/home">Travel Mania</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="ms-auto">
-      <Nav.Link to="/home">Home</Nav.Link>
-      <Nav.Link as={HashLink} to="/home#about">About</Nav.Link>
-      <Nav.Link as={HashLink} to="/home#places">Places</Nav.Link>
-      <Nav.Link as={HashLink} to="/home#plans">Plans</Nav.Link>
-      <Nav.Link as={HashLink} to="/home#guides">Our Guides</Nav.Link>
-      <Nav.Link to="/register">Register</Nav.Link>
-      <Nav.Link eventKey={2} to="/memes">
+      <Nav.Link className='text-dark' to="/home">Home</Nav.Link>
+      <Nav.Link className='text-dark' as={HashLink} to="/home#about">About</Nav.Link>
+      <Nav.Link className='text-dark' as={HashLink} to="/home#places">Places</Nav.Link>
+      <Nav.Link className='text-dark' as={HashLink} to="/home#plans">Plans</Nav.Link>
+      <Nav.Link className='text-dark' as={HashLink} to="/home#guides">Our Guides</Nav.Link>
+      <Nav.Link className='text-dark' to="/register">Register</Nav.Link>
+      <Nav.Link className='text-dark' eventKey={2} to="/memes">
         User
       </Nav.Link>
     </Nav>
