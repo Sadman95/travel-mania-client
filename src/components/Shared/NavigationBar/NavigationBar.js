@@ -6,10 +6,10 @@ import { HashLink } from 'react-router-hash-link';
 const NavigationBar = () => {
     return (
         <div>
-            <Navbar className='fixed-top w-100' collapseOnSelect expand="lg" variant="dark">
+            <Navbar className='fixed-top w-100 nav' collapseOnSelect expand="lg" variant="dark">
   <Container>
   <Navbar.Brand className='text-dark fw-bold fs-3' as={NavLink} to="/home">Travel Mania</Navbar.Brand>
-  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+  <Navbar.Toggle className='text-dark' aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="ms-auto">
       <Nav.Link className='text-dark' to="/home">Home</Nav.Link>
