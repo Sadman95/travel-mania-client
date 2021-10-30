@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NavigationBar from './components/Shared/NavigationBar/NavigationBar';
 import Home from './components/Home/Home';
+import AddPlaces from './components/AddPlaces/AddPlaces';
 
 
 function App() {
@@ -16,6 +17,9 @@ function App() {
           </Route>
           <Route exact path='/home'>
             <Home></Home>
+          </Route>
+          <Route exact path='/addPlace'>
+            <AddPlaces></AddPlaces>
           </Route>
         </Switch>
       </Router>
