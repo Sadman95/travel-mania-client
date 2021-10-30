@@ -47,6 +47,17 @@ const AddPlaces = () => {
         </div>
         <br />
         <div className='row'>
+        <label className='col-2' htmlFor="details">Cost</label>
+        <input
+        className='col-10'
+          id="details"
+          placeholder="$ Costing"
+          type="number"
+          {...register("cost", { required: true })}
+        />
+        </div>
+        <br />
+        <div className='row'>
         <label className='col-2' htmlFor="image">ImageURL</label>
         <input
         className='col-10'

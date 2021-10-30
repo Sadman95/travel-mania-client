@@ -13,7 +13,7 @@ const Places = () => {
         .then(data => setPlaces(data))
     }, [])
     return (
-        <div id='places' className='p-4'>
+        <div id='places' className='p-4 mb-5'>
             <h2 className='text-center'>Places</h2>
             <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 2, sm: 8, md: 12 }}>
         {places.map((place, index) => (

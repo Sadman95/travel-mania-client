@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NavigationBar from './components/Shared/NavigationBar/NavigationBar';
 import Home from './components/Home/Home';
 import AddPlaces from './components/AddPlaces/AddPlaces';
+import Admin from './components/Admin/Admin';
 
 
 function App() {
@@ -18,8 +19,11 @@ function App() {
           <Route exact path='/home'>
             <Home></Home>
           </Route>
-          <Route exact path='/addPlace'>
+          <Route exact path='/admin/addPlace'>
             <AddPlaces></AddPlaces>
+          </Route>
+          <Route path='/admin'>
+            <Admin></Admin>
           </Route>
         </Switch>
       </Router>
