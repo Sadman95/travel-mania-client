@@ -46,11 +46,11 @@ function App() {
           <Route exact path='/register'>
             <Register></Register>
           </Route>
-          <Route path='/'>
-            <Home></Home>
-          </Route>
           <Route exact path='*'>
             <NotFound></NotFound>
+          </Route>
+          <Route path='/'>
+            <Home></Home>
           </Route>
         </Switch>
         <Footer></Footer>

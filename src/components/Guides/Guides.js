@@ -15,7 +15,7 @@ const Guides = () => {
     }, [])
 
     return (
-        <div id='guides' className='mt-5 p-4'>
+        <div id='guides' style={{marginBottom: '100px'}} className='mt-5 p-4 mb-5'>
             <h2 className='text-center mb-2'>Our Guides</h2>
             <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 2, sm: 8, md: 12 }}>
         {guides.map((guide, index) => (

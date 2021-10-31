@@ -6,7 +6,7 @@ import './Footer.css'
 
 const Footer = () => {
     return (
-        <div className='footer text-light bg-dark p-4 d-flex flex-wrap justify-content-between align-items-center'>
+        <div className='footer text-light bg-dark p-2 d-flex flex-wrap justify-content-between align-items-center'>
             <h3>Travel Mania</h3>
             <div>
                 <span>All Rights Reserved || 2021</span>
