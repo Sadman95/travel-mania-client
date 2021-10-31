@@ -10,7 +10,6 @@ const AddPlaces = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-      console.log(data)
     axios.post('http://localhost:5555/places', data)
     .then(res => {
         if(res.data.insertedId){
@@ -18,7 +17,7 @@ const AddPlaces = () => {
             reset();
         }
     })
-};;
+};
 
   return (
     <div className="w-50 mt-5 pt-5 mx-auto">

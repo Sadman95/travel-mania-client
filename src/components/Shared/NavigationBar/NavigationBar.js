@@ -13,12 +13,12 @@ const NavigationBar = () => {
   <Navbar.Toggle className='text-dark' aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="ms-auto">
-      <Nav.Link className='text-dark' to="/home">Home</Nav.Link>
+      <Nav.Link className='text-dark' as={Link} to="/home">Home</Nav.Link>
       <Nav.Link className='text-dark' as={HashLink} to="/home#about">About</Nav.Link>
       <Nav.Link className='text-dark' as={HashLink} to="/home#places">Places</Nav.Link>
       <Nav.Link className='text-dark' as={HashLink} to="/home#subscribe">Subscribe</Nav.Link>
       <Nav.Link className='text-dark' as={HashLink} to="/home#guides">Our Guides</Nav.Link>
-      <Nav.Link className='text-dark' to="/register">Register</Nav.Link>
+      <Nav.Link className='text-dark' as={Link} to="/register">Register</Nav.Link>
       <Nav.Link className='text-dark' eventKey={2} to="/memes">
         User
       </Nav.Link>
