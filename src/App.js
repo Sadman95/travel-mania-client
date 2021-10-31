@@ -13,6 +13,7 @@ import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import MyBookings from './components/MyBookings/MyBookings';
 import Footer from './components/Shared/Footer/Footer';
+import NotFound from './components/NotFound/NotFound';
 
 
 function App() {
@@ -47,6 +48,9 @@ function App() {
           </Route>
           <Route path='/'>
             <Home></Home>
+          </Route>
+          <Route exact path='*'>
+            <NotFound></NotFound>
           </Route>
         </Switch>
         <Footer></Footer>
