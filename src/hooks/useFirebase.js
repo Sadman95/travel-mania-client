@@ -7,6 +7,9 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 import initAuthentication from "../Firebase/firebase.init";
+import axios from 'axios';
+import swal from 'sweetalert';
+
 
 initAuthentication();
 
@@ -22,7 +25,21 @@ const useFirebase = () => {
     setIsLoading(true);
     const googleProvider = new GoogleAuthProvider();
     signInWithPopup(auth, googleProvider)
-      .then((result) => setUser(result.user))
+      .then((result) => {
+          setUser(result.user)
+        const userInfo = {
+            name: result.user.displayName,
+            email: result.user.email,
+            img: result.user.photoURL
+        }
+        axios.post('http://localhost:5555/users', userInfo)
+    .then(res => {
+        if(res.data.insertedId){
+            swal("Good job!", "Logged In Successfully!", "success");
+            
+        }
+    })
+        })
       .finally(() => {
         setIsLoading(false);
       });
@@ -40,7 +57,7 @@ const useFirebase = () => {
       setIsLoading(false);
     });
     return () => unsubscribed;
-  }, []);
+  }, [auth]);
 
 
   //Sign Out:

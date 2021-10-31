@@ -1,10 +1,22 @@
 import { Button } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { Col, Row } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import './Admin.css'
 
 const Admin = () => {
+
+    const [users, setUsers] = useState([]);
+
+    useEffect(() =>{
+        fetch('http://localhost:5555/users')
+        .then(res => res.json())
+        .then(data => setUsers(data))
+    }, [])
 
     const {isLoading} = useAuth();
 
@@ -29,7 +41,23 @@ const Admin = () => {
                 </NavLink>
             </div>
             <div className='col-10 bg-secondary'>
-                <h1>This is Admin</h1>
+                <h1 className='text-light mb-4'>Users</h1>
+                <div className="row">
+                    {
+                        users.map(user => <Row className='mb-4 text-light d-flex align-items-center' key={user._id}>
+                            <Col><img className='userImg' src={user.img} alt="" /></Col>
+                            <Col>
+                                <p>{user.name}</p>
+                            </Col>
+                            <Col>
+                                <p>{user.email}</p>
+                            </Col>
+                            <Col>
+                                <button className="btn btn-danger text-light">Delete</button>
+                            </Col>
+                          </Row>)
+                    }
+                </div>
             </div>
         </Box>
         </div>
