@@ -9,7 +9,7 @@ const GuideInfoUpdate = () => {
   const [guide, setGuide] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5555/guides/${id}`)
+    fetch(`https://spooky-cemetery-57161.herokuapp.com/guides/${id}`)
       .then((res) => res.json())
       .then((result) => setGuide(result));
   }, [id]);
@@ -51,7 +51,7 @@ const GuideInfoUpdate = () => {
   const handleUpdate = (e) => {
     e.preventDefault();
 
-    fetch(`http://localhost:5555/guides/${id}`, {
+    fetch(`https://spooky-cemetery-57161.herokuapp.com/guides/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

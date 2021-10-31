@@ -9,7 +9,7 @@ const Guides = () => {
     const [guides, setGuides] = useState([]);
 
     useEffect(() =>{
-        fetch('http://localhost:5555/guides')
+        fetch('https://spooky-cemetery-57161.herokuapp.com/guides')
         .then(res => res.json())
         .then(data => setGuides(data))
     }, [])

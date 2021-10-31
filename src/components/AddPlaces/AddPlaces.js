@@ -10,7 +10,7 @@ const AddPlaces = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    axios.post('http://localhost:5555/places', data)
+    axios.post('https://spooky-cemetery-57161.herokuapp.com/places', data)
     .then(res => {
         if(res.data.insertedId){
             alert('Place added successfully');

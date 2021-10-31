@@ -8,7 +8,7 @@ const Places = () => {
     const [places, setPlaces] = useState([]);
 
     useEffect(() =>{
-        fetch('http://localhost:5555/places')
+        fetch('https://spooky-cemetery-57161.herokuapp.com/places')
         .then(res => res.json())
         .then(data => setPlaces(data))
     }, [])

@@ -14,14 +14,14 @@ const Admin = () => {
 
     /* LOAD ALL USERS */
     useEffect(() =>{
-        fetch('http://localhost:5555/users')
+        fetch('https://spooky-cemetery-57161.herokuapp.com/users')
         .then(res => res.json())
         .then(data => setUsers(data))
     }, [])
 
     //DELETE SPECIFIC USER:
     const deleteUser = id =>{
-        axios.delete(`http://localhost:5555/users/${id}`)
+        axios.delete(`https://spooky-cemetery-57161.herokuapp.com/users/${id}`)
         .then(() =>{
             const restUsers = users.filter(user => user._id !== id);
             setUsers(restUsers);

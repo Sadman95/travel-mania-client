@@ -11,7 +11,7 @@ const LoadManageGuide = ({guide}) => {
     const [guides, setGuides] = useState([]);
 
     useEffect(() =>{
-      fetch('http://localhost:5555/guides')
+      fetch('https://spooky-cemetery-57161.herokuapp.com/guides')
       .then(res => res.json())
       .then(data => setGuides(data))
   }, [])
@@ -21,7 +21,7 @@ const LoadManageGuide = ({guide}) => {
     }
 
     const handleDelete = id =>{
-      fetch(`http://localhost:5555/guides/${id}`, {
+      fetch(`https://spooky-cemetery-57161.herokuapp.com/guides/${id}`, {
         method: 'DELETE',
       })
       .then(res => res.json())

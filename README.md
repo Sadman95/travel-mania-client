@@ -4,5 +4,5 @@
 
 # Features
 - Private route for Admin
-- Tour and TRavel Friendly
+- Tour and Travel Friendly
 - Available Tour Guides

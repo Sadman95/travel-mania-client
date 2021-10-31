@@ -13,7 +13,7 @@ const MyBookings = () => {
     const [pending, setPending] = useState('');
 
     useEffect(() =>{
-        fetch(`http://localhost:5555/places/${id}`)
+        fetch(`https://spooky-cemetery-57161.herokuapp.com/places/${id}`)
         .then(res => res.json())
         .then(data => {
             setPlace(data)

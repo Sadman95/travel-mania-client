@@ -32,7 +32,7 @@ const useFirebase = () => {
             email: result.user.email,
             img: result.user.photoURL
         }
-        axios.post('http://localhost:5555/users', userInfo)
+        axios.post('https://spooky-cemetery-57161.herokuapp.com/users', userInfo)
     .then(res => {
         if(res.data.insertedId){
             swal("Good job!", "Logged In Successfully!", "success");

@@ -20,7 +20,7 @@ const AddGuide = () => {
             email,
             image
         };
-        axios.post('http://localhost:5555/guides', guideInfo)
+        axios.post('https://spooky-cemetery-57161.herokuapp.com/guides', guideInfo)
     .then(res => {
         if(res.data.insertedId){
             alert('Guide added successfully');
