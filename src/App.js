@@ -11,6 +11,7 @@ import GuideInfoUpdate from './components/UpdateGuide/GuideInfoUpdate/GuideInfoU
 import Register from './components/Register/Register';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import MyBookings from './components/MyBookings/MyBookings';
 
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
         <Switch>
           <Route exact path='/home'>
             <Home></Home>
+          </Route>
+          <Route exact path='/myBookings/:id'>
+            <MyBookings></MyBookings>
           </Route>
           <PrivateRoute exact path='/admin'>
             <Admin></Admin>

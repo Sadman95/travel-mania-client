@@ -1,11 +1,17 @@
 import { Chip } from '@mui/material';
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
+import { useHistory } from 'react-router';
 import './Place.css'
 
 const Place = ({place}) => {
+  const history = useHistory();
 
-    const {imgUrl, title, details, cost} = place;
+    const userBooking = id =>{
+      history.push(`/myBookings/${id}`)
+  }
+
+    const {_id, imgUrl, title, details, cost} = place;
 
     return (
             <Card className='card-single bg-light'>
@@ -18,7 +24,7 @@ const Place = ({place}) => {
       <Chip className='d-flex align-items-center p-4' label={<h3 className='fw-bold text-light'>${cost}</h3>} color="primary" />
     </Card.Body>
     <Card.Footer>
-      <Button variant='danger' className='text-light'>Book Now</Button>
+      <Button onClick={()=> userBooking(_id)} variant='danger' className='text-light'>Book Now</Button>
     </Card.Footer>
   </Card>
     );

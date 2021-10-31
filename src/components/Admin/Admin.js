@@ -45,7 +45,7 @@ const Admin = () => {
                     <Button className='text-white fw-bold mb-4' variant='text' color='info'>Manage Guides</Button>
                 </NavLink>
             </div>
-            <div className='col-10 bg-secondary'>
+            <div className='col-10 bg-secondary pt-4'>
                 <h1 className='text-light mb-4'>Users</h1>
                 <div className="row">
                     {
