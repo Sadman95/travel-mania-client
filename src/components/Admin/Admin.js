@@ -1,27 +1,32 @@
 import { Button } from '@mui/material';
 import { Box } from '@mui/system';
+import axios from 'axios';
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import useAuth from '../../hooks/useAuth';
 import './Admin.css'
 
 const Admin = () => {
 
     const [users, setUsers] = useState([]);
 
+    /* LOAD ALL USERS */
     useEffect(() =>{
         fetch('http://localhost:5555/users')
         .then(res => res.json())
         .then(data => setUsers(data))
     }, [])
 
-    const {isLoading} = useAuth();
+    //DELETE SPECIFIC USER:
+    const deleteUser = id =>{
+        axios.delete(`http://localhost:5555/users/${id}`)
+        .then(() =>{
+            const restUsers = users.filter(user => user._id !== id);
+            setUsers(restUsers);
+        })
 
-    if(isLoading){
-        return <h4>Loading...</h4>
     }
     
     return (
@@ -53,7 +58,7 @@ const Admin = () => {
                                 <p>{user.email}</p>
                             </Col>
                             <Col>
-                                <button className="btn btn-danger text-light">Delete</button>
+                                <button onClick={()=>deleteUser(user._id)} className="btn btn-danger text-light">Delete</button>
                             </Col>
                           </Row>)
                     }
