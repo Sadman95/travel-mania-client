@@ -12,6 +12,7 @@ import Register from './components/Register/Register';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import MyBookings from './components/MyBookings/MyBookings';
+import Footer from './components/Shared/Footer/Footer';
 
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
             <Home></Home>
           </Route>
         </Switch>
+        <Footer></Footer>
       </Router>
     </AuthProvider>
   );
