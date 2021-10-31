@@ -9,20 +9,22 @@ import AddGuide from './components/AddGuide/AddGuide';
 import ManageGuide from './components/UpdateGuide/ManageGuide';
 import GuideInfoUpdate from './components/UpdateGuide/GuideInfoUpdate/GuideInfoUpdate';
 import Register from './components/Register/Register';
+import AuthProvider from './context/AuthProvider';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 
 function App() {
   return (
-    <div>
+    <AuthProvider>
       <Router>
         <NavigationBar/>
         <Switch>
           <Route exact path='/home'>
             <Home></Home>
           </Route>
-          <Route exact path='/admin'>
+          <PrivateRoute exact path='/admin'>
             <Admin></Admin>
-          </Route>
+          </PrivateRoute>
           <Route exact path='/admin/addPlace'>
             <AddPlaces></AddPlaces>
           </Route>
@@ -43,7 +45,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-    </div>
+    </AuthProvider>
   );
 }
 

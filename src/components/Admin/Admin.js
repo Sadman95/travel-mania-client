@@ -2,8 +2,15 @@ import { Button } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 const Admin = () => {
+
+    const {isLoading} = useAuth();
+
+    if(isLoading){
+        return <h4>Loading...</h4>
+    }
     
     return (
         <div className='p-5'>

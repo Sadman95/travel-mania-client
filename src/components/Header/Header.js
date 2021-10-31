@@ -5,8 +5,8 @@ import "./Header.css";
 const Header = () => {
   return (
     <header className="header mb-4">
-      <div className='w-25 position-absolute top-50 start-50 translate-middle'>
-      <InputGroup className="mt-4">
+      <div className='mt-4 w-25 position-absolute top-50 start-50 translate-middle'>
+      <InputGroup className="mt-5 pt-5">
         <FormControl
           placeholder="Search your favorite places"
           aria-label="Recipient's username"
