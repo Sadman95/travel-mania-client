@@ -8,6 +8,7 @@ import Admin from './components/Admin/Admin';
 import AddGuide from './components/AddGuide/AddGuide';
 import ManageGuide from './components/UpdateGuide/ManageGuide';
 import GuideInfoUpdate from './components/UpdateGuide/GuideInfoUpdate/GuideInfoUpdate';
+import Register from './components/Register/Register';
 
 
 function App() {
@@ -33,6 +34,9 @@ function App() {
           </Route>
           <Route exact path='/admin/guides/:id'>
             <GuideInfoUpdate></GuideInfoUpdate>
+          </Route>
+          <Route exact path='/register'>
+            <Register></Register>
           </Route>
           <Route path='/'>
             <Home></Home>
