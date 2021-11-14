@@ -40,6 +40,11 @@ const Admin = () => {
                 <NavLink className='text-decoration-none' to='/admin/addGuide'>
                     <Button className='text-white fw-bold mb-4' variant='text' color='info'>Add Guide</Button>
                 </NavLink>
+                
+                <br />
+                <NavLink className='text-decoration-none' to='/admin/managePlace'>
+                    <Button className='text-white fw-bold mb-4' variant='text' color='info'>Manage Place</Button>
+                </NavLink>
                 <br />
                 <NavLink className='text-decoration-none' to='/admin/guides/manageGuide'>
                     <Button className='text-white fw-bold mb-4' variant='text' color='info'>Manage Guides</Button>

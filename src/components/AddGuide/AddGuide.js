@@ -24,7 +24,7 @@ const AddGuide = () => {
     .then(res => {
         if(res.data.insertedId){
             alert('Guide added successfully');
-            e.target.reset();
+            e.target.value = '';
         }
     })
     }

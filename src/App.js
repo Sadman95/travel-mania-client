@@ -14,6 +14,7 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import MyBookings from './components/MyBookings/MyBookings';
 import NotFound from './components/NotFound/NotFound';
 import AllBookings from './components/AllBookings/AllBookings/AllBookings';
+import ManagePlaces from './components/MnagePlaces/MnagePlaces/MnagePlaces';
 
 
 function App() {
@@ -25,27 +26,30 @@ function App() {
           <Route exact path='/home'>
             <Home></Home>
           </Route>
-          <Route exact path='/allBookings'>
+          <PrivateRoute exact path='/allBookings'>
             <AllBookings></AllBookings>
-          </Route>
+          </PrivateRoute>
           <PrivateRoute exact path='/myBookings/:id'>
             <MyBookings></MyBookings>
           </PrivateRoute>
           <PrivateRoute exact path='/admin'>
             <Admin></Admin>
           </PrivateRoute>
-          <Route exact path='/admin/addPlace'>
+          <PrivateRoute exact path='/admin/addPlace'>
             <AddPlaces></AddPlaces>
-          </Route>
-          <Route exact path='/admin/addGuide'>
+          </PrivateRoute>
+          <PrivateRoute exact path='/admin/managePlace'>
+            <ManagePlaces></ManagePlaces>
+          </PrivateRoute>
+          <PrivateRoute exact path='/admin/addGuide'>
             <AddGuide></AddGuide>
-          </Route>
-          <Route exact path='/admin/guides/manageGuide'>
+          </PrivateRoute>
+          <PrivateRoute exact path='/admin/guides/manageGuide'>
             <ManageGuide></ManageGuide>
-          </Route>
-          <Route exact path='/admin/guides/:id'>
+          </PrivateRoute>
+          <PrivateRoute exact path='/admin/guides/:id'>
             <GuideInfoUpdate></GuideInfoUpdate>
-          </Route>
+          </PrivateRoute>
           <Route exact path='/register'>
             <Register></Register>
           </Route>
