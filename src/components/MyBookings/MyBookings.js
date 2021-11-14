@@ -26,7 +26,7 @@ const MyBookings = () => {
             title: place.title,
             price: place.cost
         }
-        fetch(`http://localhost:5555/bookings/${id}`, {
+        fetch(`https://spooky-cemetery-57161.herokuapp.com/bookings/${id}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

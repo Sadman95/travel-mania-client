@@ -6,7 +6,7 @@ const SingleBooking = ({booking, setRemove, bookings, setBookings}) => {
     
 
     const deleteOrder = id =>{
-        fetch(`http://localhost:5555/bookings/${id}`, {
+        fetch(`https://spooky-cemetery-57161.herokuapp.com/bookings/${id}`, {
             method: 'DELETE',
         })
         .then(res => res.json())

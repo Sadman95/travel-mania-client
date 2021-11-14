@@ -6,7 +6,7 @@ const SinglePlace = ({places, place, setPlaces, setRemove}) => {
     const {_id, imgUrl, title, cost} = place;
 
     const removePlace = id =>{
-        fetch(`http://localhost:5555/places/${id}`, {
+        fetch(`https://spooky-cemetery-57161.herokuapp.com/places/${id}`, {
             method: 'DELETE',
         })
         .then(res => res.json())

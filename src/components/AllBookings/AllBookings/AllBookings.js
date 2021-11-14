@@ -7,7 +7,7 @@ const AllBookings = () => {
     const [remove, setRemove] = useState(false);
 
     useEffect(() =>{
-        fetch('http://localhost:5555/bookings')
+        fetch('https://spooky-cemetery-57161.herokuapp.com/bookings')
         .then(res => res.json())
         .then(data => setBookings(data))
     }, [])
