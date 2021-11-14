@@ -23,6 +23,9 @@ function App() {
       <Router>
         <NavigationBar/>
         <Switch>
+        <Route exact path='/'>
+            <Home></Home>
+          </Route>
           <Route exact path='/home'>
             <Home></Home>
           </Route>
