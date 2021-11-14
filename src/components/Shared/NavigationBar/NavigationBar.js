@@ -71,7 +71,7 @@ const NavigationBar = () => {
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
-                  <Dropdown.Item as={NavLink} to="/myBookings/:id">
+                  <Dropdown.Item as={NavLink} to="/allBookings">
                     My Bookings
                   </Dropdown.Item>
                   <Dropdown.Item

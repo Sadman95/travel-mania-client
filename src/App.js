@@ -12,8 +12,8 @@ import Register from './components/Register/Register';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import MyBookings from './components/MyBookings/MyBookings';
-import Footer from './components/Shared/Footer/Footer';
 import NotFound from './components/NotFound/NotFound';
+import AllBookings from './components/AllBookings/AllBookings/AllBookings';
 
 
 function App() {
@@ -25,9 +25,12 @@ function App() {
           <Route exact path='/home'>
             <Home></Home>
           </Route>
-          <Route exact path='/myBookings/:id'>
-            <MyBookings></MyBookings>
+          <Route exact path='/allBookings'>
+            <AllBookings></AllBookings>
           </Route>
+          <PrivateRoute exact path='/myBookings/:id'>
+            <MyBookings></MyBookings>
+          </PrivateRoute>
           <PrivateRoute exact path='/admin'>
             <Admin></Admin>
           </PrivateRoute>
@@ -53,7 +56,7 @@ function App() {
             <Home></Home>
           </Route>
         </Switch>
-        <Footer></Footer>
+        
       </Router>
     </AuthProvider>
   );

@@ -11,7 +11,7 @@ const Place = ({place}) => {
       history.push(`/myBookings/${id}`)
   }
 
-    const {_id, imgUrl, title, details, cost} = place;
+    const {_id, imgUrl, title, cost} = place;
 
     return (
             <Card className='card-single bg-light'>
@@ -19,7 +19,7 @@ const Place = ({place}) => {
     <Card.Body>
       <Card.Title>{title}</Card.Title>
       <Card.Text className='text-secondary'>
-        {details.slice(0, 200)}
+        {(title.split(',')[1])}
       </Card.Text>
       <Chip className='d-flex align-items-center p-4' label={<h3 className='fw-bold text-light'>${cost}</h3>} color="primary" />
     </Card.Body>

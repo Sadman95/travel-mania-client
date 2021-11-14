@@ -1,16 +1,14 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Col, Row } from 'react-bootstrap';
-import { useParams } from 'react-router';
+import { Card } from 'react-bootstrap';
+import {Button, Typography} from '@mui/material'
 import swal from 'sweetalert';
-import useAuth from '../../hooks/useAuth';
+import { useParams } from 'react-router';
 
 const MyBookings = () => {
-    const {user} = useAuth();
     const {id} = useParams();
     const [place, setPlace] = useState({});
-    const [pending, setPending] = useState('');
 
     useEffect(() =>{
         fetch(`https://spooky-cemetery-57161.herokuapp.com/places/${id}`)
@@ -20,38 +18,41 @@ const MyBookings = () => {
         })
     }, [id])
 
-    const handlePurchase = () =>{
-        setPending('Pending...')
-        
-    }
+  
 
-    const handleConfirm = () =>{
-        setPending('');
+    const handlePurchase = (id) =>{
+        const booking = {
+            image: place.imgUrl,
+            title: place.title,
+            price: place.cost
+        }
+        fetch(`http://localhost:5555/bookings/${id}`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(booking)
+        })
+        .then(res => res.json())
+        .then(result => console.log(result))
         swal("Good job!", "Purchased confirmed!", "success");
-        document.getElementById('place').textContent = '';
+    
     }
 console.log(place)
     return (
-        <Row id='place' className='mt-5 p-5 text-dark d-flex justify-content-center align-items-center'>
-                            <Col><img className='img-fluid rounded' src={place.imgUrl} alt="" /></Col>
-                            <Col>
-                                <p>{place.title}</p>
-                            </Col>
-                            <Col>
-                                <h3>${place.cost}</h3>
-                            </Col>
-                            
-                            <Col>
-                                <h3>${user.email}</h3>
-                            </Col>
-                            <Col>
-                                <button onClick={handlePurchase} className="btn btn-secondary text-light">Purchase</button>
-                                <br /><span>{pending}</span> 
-                            </Col>
-                            <Col>
-                            <button onClick={handleConfirm} className='btn btn-success text-light'>Confirm</button>
-                            </Col>
-                          </Row>
+        <Card style={{ width: '100%', padding: '32px' }}>
+  <Card.Img variant="top" src={place.imgUrl} />
+  <Card.Body>
+    <Card.Title>{place.title}</Card.Title>
+    <Card.Text>
+      {place.details}
+    </Card.Text>
+    <Typography variant='h3' component='div'>
+          ${place.cost}
+      </Typography>
+    <Button onClick={()=>handlePurchase(place._id)} variant="contained">Purchase</Button>
+  </Card.Body>
+</Card>
     );
 };
 

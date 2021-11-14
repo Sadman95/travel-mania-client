@@ -4,6 +4,7 @@ import Guides from '../Guides/Guides';
 import Header from '../Header/Header';
 import Places from '../Places/Places';
 import Subscribe from '../Subscribe/Subscribe';
+import Footer from '../Shared/Footer/Footer'
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
             <Places></Places>
             <Subscribe></Subscribe>
             <Guides></Guides>
+            <Footer></Footer>
         </div>
     );
 };
