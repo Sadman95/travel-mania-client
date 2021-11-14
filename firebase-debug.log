@@ -1,0 +1,36 @@
+[debug] [2021-11-14T22:42:13.488Z] ----------------------------------------------------------------------
+[debug] [2021-11-14T22:42:13.497Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\sadMan\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2021-11-14T22:42:13.498Z] CLI Version:   9.22.0
+[debug] [2021-11-14T22:42:13.499Z] Platform:      win32
+[debug] [2021-11-14T22:42:13.499Z] Node Version:  v14.16.0
+[debug] [2021-11-14T22:42:13.611Z] Time:          Mon Nov 15 2021 04:42:13 GMT+0600 (Bangladesh Standard Time)
+[debug] [2021-11-14T22:42:13.612Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-11-14T22:42:13.839Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-11-14T22:42:13.839Z] > authorizing via signed-in user (sadman.09.iiuc@gmail.com)
+[debug] [2021-11-14T22:42:13.839Z] [iam] checking project travel-mania-367b4 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-11-14T22:42:13.843Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/travel-mania-367b4:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-11-14T22:42:16.168Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 14 Nov 2021 22:42:17 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1195","alt-svc":"clear","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-14T22:42:16.171Z] > refreshing access token with scopes: []
+[debug] [2021-11-14T22:42:16.172Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-11-14T22:42:37.378Z] Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+[debug] [2021-11-14T22:42:37.719Z] FirebaseError: Authentication Error: Your credentials are no longer valid. Please run firebase login --reauth
+
+For CI servers and headless environments, generate a new token with firebase login:ci
+    at invalidCredentialError (C:\Users\sadMan\AppData\Roaming\npm\node_modules\firebase-tools\lib\auth.js:141:12)
+    at refreshTokens (C:\Users\sadMan\AppData\Roaming\npm\node_modules\firebase-tools\lib\auth.js:448:15)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)
+    at async Client.getAccessToken (C:\Users\sadMan\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:146:23)
+    at async Client.addAuthHeader (C:\Users\sadMan\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:137:21)
+    at async Client.request (C:\Users\sadMan\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:93:34)
+    at async Object.getFirebaseProject (C:\Users\sadMan\AppData\Roaming\npm\node_modules\firebase-tools\lib\management\projects.js:290:21)
+    at async Object.getDefaultHostingSite (C:\Users\sadMan\AppData\Roaming\npm\node_modules\firebase-tools\lib\getDefaultHostingSite.js:8:21)
+    at async requireHostingSite (C:\Users\sadMan\AppData\Roaming\npm\node_modules\firebase-tools\lib\requireHostingSite.js:9:18)
+    at async Object.fn (C:\Users\sadMan\AppData\Roaming\npm\node_modules\firebase-tools\lib\commands\deploy.js:73:9)
+    at async C:\Users\sadMan\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:188:17
+[error] 
+[error] Error: Failed to get Firebase project travel-mania-367b4. Please make sure the project exists and your account has permission to access it.
