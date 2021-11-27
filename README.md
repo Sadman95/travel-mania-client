@@ -1,6 +1,6 @@
 # Travel Mania
 
- [Travel Mania](https://travel-mania-367b4.web.app).
+ Live Site: [Travel Mania](https://travel-mania-367b4.web.app).
 
 # Features
 - User can login with google through firebase authentication
