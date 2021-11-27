@@ -1,9 +1,13 @@
 import React from 'react';
 import { TableCell, TableRow, Button } from '@mui/material';
+import { Box } from '@mui/system';
+import {UpdateModal} from '../UpdateModal/UpdateModal';
 
 
 const SinglePlace = ({places, place, setPlaces, setRemove}) => {
     const {_id, imgUrl, title, cost} = place;
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
 
     const removePlace = id =>{
         fetch(`https://spooky-cemetery-57161.herokuapp.com/places/${id}`, {
@@ -19,6 +23,8 @@ const SinglePlace = ({places, place, setPlaces, setRemove}) => {
         })
     }
 
+
+
     return (
         <TableRow
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -29,7 +35,11 @@ const SinglePlace = ({places, place, setPlaces, setRemove}) => {
               <TableCell align="right">{title}</TableCell>
               <TableCell align="right">${cost}</TableCell>
               <TableCell align="right">
+                  <Box sx={{display:'flex'}}>
                   <Button variant='contained' color='error' onClick={()=>removePlace(_id)}>Remove</Button>
+                  <Button variant='contained' color='primary' onClick={handleOpen}>Update</Button>
+                  <UpdateModal place={place} open={open} setOpen={setOpen}></UpdateModal>
+                  </Box>
               </TableCell>
             </TableRow>
     );

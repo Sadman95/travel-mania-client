@@ -20,13 +20,13 @@ const ManagePlaces = () => {
 {remove && <Alert sx={{marginBottom: '16px'}} severity='warning'>Place deleted!</Alert> }
 <TableContainer sx={{marginTop: '6em'}} component={Paper}>
             {remove && <Alert sx={{marginBottom: '16px'}} severity='warning'>Deleted Successfully!</Alert>}
-      <Table sx={{ maxWidth: 700, margin:'auto' }} aria-label="simple table">
+      <Table sx={{ maxWidth: 800, margin:'auto' }} aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell>Place Image</TableCell>
             <TableCell align="right">Place Name</TableCell>
             <TableCell align="right">Tour Cost</TableCell>
-            <TableCell align="right">Action</TableCell>
+            <TableCell align="center">Action</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

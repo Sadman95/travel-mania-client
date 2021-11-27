@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useRef } from "react";
 import { Col, Form, Row, Button } from "react-bootstrap";
+import swal from "sweetalert";
 
 const AddGuide = () => {
 
@@ -23,8 +24,8 @@ const AddGuide = () => {
         axios.post('https://spooky-cemetery-57161.herokuapp.com/guides', guideInfo)
     .then(res => {
         if(res.data.insertedId){
-            alert('Guide added successfully');
-            e.target.value = '';
+            swal('Well Done', 'Guide added successfully!', 'success');
+            e.target.reset();
         }
     })
     }

@@ -20,13 +20,13 @@ const MyBookings = () => {
 
   
 
-    const handlePurchase = (id) =>{
+    const handlePurchase = () =>{
         const booking = {
             image: place.imgUrl,
             title: place.title,
             price: place.cost
         }
-        fetch(`https://spooky-cemetery-57161.herokuapp.com/bookings/${id}`, {
+        fetch(`https://spooky-cemetery-57161.herokuapp.com/bookings`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -34,8 +34,12 @@ const MyBookings = () => {
             body: JSON.stringify(booking)
         })
         .then(res => res.json())
-        .then(result => console.log(result))
-        swal("Good job!", "Purchased confirmed!", "success");
+        .then(result => {
+            if(result.insertedId){
+                swal("Good job!", "Purchased confirmed!", "success");
+            }
+        })
+        // 
     
     }
 console.log(place)
@@ -50,7 +54,7 @@ console.log(place)
     <Typography variant='h3' component='div'>
           ${place.cost}
       </Typography>
-    <Button onClick={()=>handlePurchase(place._id)} variant="contained">Purchase</Button>
+    <Button onClick={()=>handlePurchase()} variant="contained">Purchase</Button>
   </Card.Body>
 </Card>
     );

@@ -3,6 +3,7 @@ import React from 'react';
 
 const SingleBooking = ({booking, setRemove, bookings, setBookings}) => {
     const {_id, image, title, price} = booking;
+    console.log(booking);
     
 
     const deleteOrder = id =>{
