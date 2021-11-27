@@ -1,4 +1,4 @@
-import { Avatar, Chip, Button } from "@mui/material";
+import {  Button } from "@mui/material";
 import React from "react";
 import { Container, Dropdown, Nav, Navbar } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
@@ -15,7 +15,7 @@ const NavigationBar = () => {
   return (
     <div>
       <Navbar
-        className='fixed-top w-100 nav bg-light'
+        className='fixed-top w-100 nav bg-secondary'
         collapseOnSelect
         expand="lg"
         variant="dark"
@@ -59,14 +59,13 @@ const NavigationBar = () => {
 
               {
                   user.email && <>
-                    <Chip
-                avatar={<Avatar alt="user" src={user.photoURL} />}
-                label={user.displayName}
-                variant="outlined"
-              />
+                    <div>
+                      <img style={{borderRadius: '50%', marginRight: '3px'}} width='50px' src={user.photoURL} alt={user.displayName} />
+                      <span className='text-light'>{user.displayName}</span>
+                    </div>
 
               <Dropdown className="d-inline mx-2" autoClose="outside">
-                <Dropdown.Toggle className='bg-light text-dark border-0' id="dropdown-autoclose-outside">
+                <Dropdown.Toggle className='bg-secondary text-dark border-0' id="dropdown-autoclose-outside">
                   
                 </Dropdown.Toggle>
 
